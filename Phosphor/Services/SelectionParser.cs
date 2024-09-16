@@ -57,7 +57,7 @@ public class SelectionParser
         
         // return icon names
         var iconNames = selection.Icons
-            .Select(iconElement => iconElement.Properties.Name)
+            .Select(iconElement => iconElement.Icon.Tags[0])
             .ToList();
         
         return iconNames;
