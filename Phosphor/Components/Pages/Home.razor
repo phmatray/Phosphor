@@ -1,0 +1,33 @@
+﻿@page "/"
+@using Icons = Phosphor.Components.Icons
+@inject SelectionParser SelectionParser
+
+<PageTitle>Home</PageTitle>
+
+<h1>Phosphor Icons Demo</h1>
+
+Welcome to your new app.
+
+<!-- Using the Phosphor icon library -->
+<div style="font-size: 42px">
+  <i class="ph ph-smiley"></i>
+  <i class="ph ph-fill ph-heart" style="color: hotpink"></i>
+  <i class="ph ph-thin ph-cube"></i>
+</div>
+
+<!-- How I want to use the Phosphor icon library -->
+<div>
+  <MudIcon Icon="@Icons.Phosphor.Regular.Smiley" Size="Size.Large"/>
+  <MudIcon Icon="@Icons.Phosphor.Regular.Heart" Size="Size.Large" Color="Color.Warning"/>
+  <MudIcon Icon="@Icons.Phosphor.Regular.Cube" Size="Size.Large"/>
+</div>
+
+@code{
+  
+  protected override void OnInitialized()
+  {
+    // SelectionParser.GenerateIconClasses();
+  }
+
+}
+
