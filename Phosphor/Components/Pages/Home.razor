@@ -1,6 +1,5 @@
 ﻿@page "/"
 @using Icons = Phosphor.Components.Icons
-@inject SelectionParser SelectionParser
 
 <PageTitle>Home</PageTitle>
 
@@ -15,19 +14,41 @@ Welcome to your new app.
   <i class="ph ph-thin ph-cube"></i>
 </div>
 
-<!-- How I want to use the Phosphor icon library -->
+<!-- Usage -->
 <div>
-  <MudIcon Icon="@Icons.Phosphor.Regular.Smiley" Size="Size.Large"/>
-  <MudIcon Icon="@Icons.Phosphor.Regular.Heart" Size="Size.Large" Color="Color.Warning"/>
-  <MudIcon Icon="@Icons.Phosphor.Regular.Cube" Size="Size.Large"/>
+  <MudIcon Icon="@Icons.Phosphor.Regular.Smiley" Title="Smiley"/>
+  <MudIcon Icon="@Icons.Phosphor.Regular.Heart" Title="Heart"/>
+  <MudIcon Icon="@Icons.Phosphor.Regular.Cube" Title="Cube"/>
+  <MudIcon Icon="@Icons.Phosphor.Regular.Airplane" Title="Airplane"/>
+  <MudIcon Icon="@Icons.Phosphor.Regular.Balloon" Title="Balloon"/>
+  <MudIcon Icon="@Icons.Phosphor.Regular.Hamburger" Title="Hamburger"/>
 </div>
 
-@code{
-  
-  protected override void OnInitialized()
-  {
-    SelectionParser.GenerateIconClasses();
-  }
+<!-- Color -->
+<div>
+  <MudIcon Icon="@Icons.Phosphor.Regular.Radioactive" Color="Color.Default" />
+  <MudIcon Icon="@Icons.Phosphor.Regular.Radioactive" Color="Color.Primary" />
+  <MudIcon Icon="@Icons.Phosphor.Regular.Radioactive" Color="Color.Secondary" />
+  <MudIcon Icon="@Icons.Phosphor.Regular.Radioactive" Color="Color.Success" />
+  <MudIcon Icon="@Icons.Phosphor.Regular.Radioactive" Color="Color.Info" />
+  <MudIcon Icon="@Icons.Phosphor.Regular.Radioactive" Color="Color.Warning" />
+  <MudIcon Icon="@Icons.Phosphor.Regular.Radioactive" Color="Color.Error" />
+  <MudIcon Icon="@Icons.Phosphor.Regular.Radioactive" Color="Color.Dark" />
+</div>
 
-}
+<!-- Size -->
+<div>
+  <MudIcon Icon="@Icons.Phosphor.Regular.Radioactive" Size="Size.Small" />
+  <MudIcon Icon="@Icons.Phosphor.Regular.Radioactive" Size="Size.Medium" />
+  <MudIcon Icon="@Icons.Phosphor.Regular.Radioactive" Size="Size.Large" />
+</div>
 
+<!-- Variants -->
+<div>
+  <MudIcon Icon="@Icons.Phosphor.Regular.ThumbsUp" Style="font-size: 4rem;" />
+  <MudIcon Icon="@Icons.Phosphor.Regular.ThumbsUp"  Style="font-size: 4rem;" />
+  <MudIcon Icon="@Icons.Phosphor.Regular.ThumbsUp"  Style="font-size: 4rem;" />
+  <MudIcon Icon="@Icons.Phosphor.Regular.ThumbsUp"  Style="font-size: 4rem;" />
+  <MudIcon Icon="@Icons.Phosphor.Regular.ThumbsUp"  Style="font-size: 4rem;" />
+  <MudIcon Icon="@Icons.Phosphor.Regular.ThumbsUp"  Style="font-size: 4rem;" />
+</div>

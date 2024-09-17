@@ -2,12 +2,16 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phosphor", "Phosphor\Phosphor.csproj", "{28CC54AE-D227-467D-A70B-1666FB31EDDD}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "build\_build.csproj", "{5E9008EC-A148-47D0-A285-6A9C1F006C24}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E9008EC-A148-47D0-A285-6A9C1F006C24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E9008EC-A148-47D0-A285-6A9C1F006C24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28CC54AE-D227-467D-A70B-1666FB31EDDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{28CC54AE-D227-467D-A70B-1666FB31EDDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28CC54AE-D227-467D-A70B-1666FB31EDDD}.Release|Any CPU.ActiveCfg = Release|Any CPU

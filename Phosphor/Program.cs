@@ -1,6 +1,5 @@
 using MudBlazor.Services;
 using Phosphor.Components;
-using Phosphor.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +8,6 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
 builder.Services.AddMudServices();
-builder.Services.AddScoped<SelectionParser>();
 
 var app = builder.Build();
 
