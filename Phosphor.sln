@@ -6,7 +6,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "build\_build.cspr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phosphor.UnitTests", "Phosphor.UnitTests\Phosphor.UnitTests.csproj", "{9EF45E12-ECE9-444F-ADC1-57BA48471FA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MudBlazor.Phosphor", "MudBlazor.Phosphor\MudBlazor.Phosphor.csproj", "{792C4B8C-2551-429F-899D-87D3B7877707}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MudBlazor.PhosphorIcons", "MudBlazor.PhosphorIcons\MudBlazor.PhosphorIcons.csproj", "{792C4B8C-2551-429F-899D-87D3B7877707}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

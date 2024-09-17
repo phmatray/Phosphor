@@ -1,5 +1,3 @@
-using Microsoft.AspNetCore.Components;
-
 namespace MudBlazor.Phosphor;
 
 public abstract class SuperIcon : MudIcon

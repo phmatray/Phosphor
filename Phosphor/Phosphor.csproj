@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MudBlazor.Phosphor\MudBlazor.Phosphor.csproj" />
+    <ProjectReference Include="..\MudBlazor.PhosphorIcons\MudBlazor.PhosphorIcons.csproj" />
   </ItemGroup>
 
   <ItemGroup>

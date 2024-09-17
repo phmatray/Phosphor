@@ -1,0 +1,38 @@
+<MudGrid>
+  <MudItem xs="12">
+    <MudText Typo="Typo.h5" Align="Align.Center">
+      Super File Icon
+    </MudText>
+  </MudItem>
+  <MudItem xs="6">
+    <MudStack Justify="Justify.Center" AlignItems="AlignItems.Center">
+      <SuperFileIcon
+        style="font-size: 6rem;"
+        Weight="_weight"
+        Value="_value"/>
+    </MudStack>
+  </MudItem>
+  <MudItem xs="6">
+    <MudStack>
+      <MudSelect Label="Weight" @bind-Value="_weight">
+        @foreach (var weight in Enum.GetValues<IconWeight>())
+        {
+        <MudSelectItem Value="@weight">@weight</MudSelectItem>
+        }
+      </MudSelect>
+      <MudSelect Label="Value" @bind-Value="_value">
+        @foreach (var value in Enum.GetValues<FileValue>())
+        {
+        <MudSelectItem Value="@value">@value</MudSelectItem>
+        }
+      </MudSelect>
+    </MudStack>
+  </MudItem>
+</MudGrid>
+
+@code {
+  
+  private IconWeight _weight = IconWeight.Regular;
+  private FileValue _value = FileValue.Normal;
+  
+}
