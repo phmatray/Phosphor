@@ -1,0 +1,46 @@
+<MudGrid>
+  <MudItem xs="12">
+    <MudText Typo="Typo.h5" Align="Align.Center">
+      Super Number Icon
+    </MudText>
+  </MudItem>
+  <MudItem xs="6">
+    <MudStack Justify="Justify.Center" AlignItems="AlignItems.Center">
+      <SuperNumberIcon
+        style="font-size: 6rem;"
+        Weight="_weight"
+        Variant="_variant"
+        Value="_value"/>
+    </MudStack>
+  </MudItem>
+  <MudItem xs="6">
+    <MudStack>
+      <MudSelect Label="Weight" @bind-Value="_weight">
+        @foreach (var weight in Enum.GetValues<IconWeight>())
+        {
+          <MudSelectItem Value="@weight">@weight</MudSelectItem>
+        }
+      </MudSelect>
+      <MudSelect Label="Variant" @bind-Value="_variant">
+        @foreach (var variant in Enum.GetValues<NumberVariant>())
+        {
+          <MudSelectItem Value="@variant">@variant</MudSelectItem>
+        }
+      </MudSelect>
+      <MudSelect Label="Value" @bind-Value="_value">
+        @foreach (var value in Enum.GetValues<NumberValue>())
+        {
+          <MudSelectItem Value="@value">@value</MudSelectItem>
+        }
+      </MudSelect>
+    </MudStack>
+  </MudItem>
+</MudGrid>
+
+@code {
+  
+  private IconWeight _weight = IconWeight.Regular;
+  private NumberVariant _variant = NumberVariant.Normal;
+  private NumberValue _value = NumberValue.Zero;
+  
+}

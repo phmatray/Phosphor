@@ -1,11 +1,22 @@
 ﻿@inherits LayoutComponentBase
 
-<MudThemeProvider />
+<MudThemeProvider Theme="_theme" />
 <MudPopoverProvider />
 <MudDialogProvider />
 <MudSnackbarProvider />
 
 <MudLayout>
+  <MudAppBar>
+    <MudIconButton Icon="@Icons.Phosphor.Regular.List" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
+    Phosphor Icons with MudBlazor
+  </MudAppBar>
+  <MudDrawer @bind-Open="@_drawerOpen">
+    <MudNavMenu>
+      <MudNavLink Href="/" Match="NavLinkMatch.All">Icons</MudNavLink>
+      <MudNavLink Href="/reference">Icon Reference</MudNavLink>
+      <MudNavLink Href="/super-icons">Super Icons</MudNavLink>
+    </MudNavMenu>
+  </MudDrawer>
   <MudMainContent>
     @Body
   </MudMainContent>
@@ -16,3 +27,24 @@
   <a href="" class="reload">Reload</a>
   <a class="dismiss">🗙</a>
 </div>
+
+@code {
+  bool _drawerOpen = true;
+  AppTheme _theme = new();
+
+  void DrawerToggle()
+  {
+    _drawerOpen = !_drawerOpen;
+  }
+
+  class AppTheme : MudTheme
+  {
+    public AppTheme()
+    {
+      PaletteLight = new PaletteLight
+      {
+        Background = "#faf9f6" // Off White
+      };
+    }
+  }
+}

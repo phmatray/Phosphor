@@ -1,54 +1,71 @@
 ﻿@page "/"
-@using Icons = Phosphor.Components.Icons
 
 <PageTitle>Home</PageTitle>
 
-<h1>Phosphor Icons Demo</h1>
+<MudGrid Class="pa-4">
+  <MudItem xs="12">
+    <MudText Typo="Typo.h4">Phosphor Icons Demo</MudText>
+    <MudText Typo="Typo.body1">Guidance and suggestions for using Phosphor icons with MudBlazor.</MudText>
+  </MudItem>
+  <MudItem xs="12">
+    <!-- Usage -->
+    <MudText Typo="Typo.h5" GutterBottom>Usage</MudText>
+    <MudPaper Class="pa-4">
+      <MudIcon Icon="@Icons.Phosphor.Regular.Smiley" Title="Smiley"/>
+      <MudIcon Icon="@Icons.Phosphor.Regular.Heart" Title="Heart"/>
+      <MudIcon Icon="@Icons.Phosphor.Regular.Cube" Title="Cube"/>
+      <MudIcon Icon="@Icons.Phosphor.Regular.Airplane" Title="Airplane"/>
+      <MudIcon Icon="@Icons.Phosphor.Regular.Balloon" Title="Balloon"/>
+      <MudIcon Icon="@Icons.Phosphor.Regular.Hamburger" Title="Hamburger"/>
+    </MudPaper>
+  </MudItem>
+  <MudItem xs="12">
+    <!-- Color -->
+    <MudText Typo="Typo.h5" GutterBottom>Color</MudText>
+    <MudPaper Class="pa-4">
+      <MudIcon Icon="@Icons.Phosphor.Regular.Radioactive" Color="Color.Default" />
+      <MudIcon Icon="@Icons.Phosphor.Regular.Radioactive" Color="Color.Primary" />
+      <MudIcon Icon="@Icons.Phosphor.Regular.Radioactive" Color="Color.Secondary" />
+      <MudIcon Icon="@Icons.Phosphor.Regular.Radioactive" Color="Color.Success" />
+      <MudIcon Icon="@Icons.Phosphor.Regular.Radioactive" Color="Color.Info" />
+      <MudIcon Icon="@Icons.Phosphor.Regular.Radioactive" Color="Color.Warning" />
+      <MudIcon Icon="@Icons.Phosphor.Regular.Radioactive" Color="Color.Error" />
+      <MudIcon Icon="@Icons.Phosphor.Regular.Radioactive" Color="Color.Dark" />
+    </MudPaper>
+  </MudItem>
+  <MudItem xs="12">
+    <!-- Size -->
+    <MudText Typo="Typo.h5" GutterBottom>Size</MudText>
+    <MudPaper Class="pa-4">
+      <MudIcon Icon="@Icons.Phosphor.Regular.Radioactive" Size="Size.Small" />
+      <MudIcon Icon="@Icons.Phosphor.Regular.Radioactive" Size="Size.Medium" />
+      <MudIcon Icon="@Icons.Phosphor.Regular.Radioactive" Size="Size.Large" />
+    </MudPaper>
+  </MudItem>
+  <MudItem xs="12">
+    <!-- Variants -->
+    <MudText Typo="Typo.h5" GutterBottom>Variants</MudText>
+    <MudPaper Class="pa-4">
+      <MudIcon Icon="@Icons.Phosphor.Thin.ThumbsUp" Style="font-size: 4rem;" />
+      <MudIcon Icon="@Icons.Phosphor.Light.ThumbsUp" Style="font-size: 4rem;" />
+      <MudIcon Icon="@Icons.Phosphor.Regular.ThumbsUp" Style="font-size: 4rem;" />
+      <MudIcon Icon="@Icons.Phosphor.Bold.ThumbsUp" Style="font-size: 4rem;" />
+      <MudIcon Icon="@Icons.Phosphor.Fill.ThumbsUp" Style="font-size: 4rem;" />
+      <MudIcon Icon="@Icons.Phosphor.Duotone.ThumbsUp" Style="font-size: 4rem;" />
+    </MudPaper>
+  </MudItem>
+  <MudItem xs="12">
+    <!-- With Buttons -->
+    <MudText Typo="Typo.h5" GutterBottom>Variants</MudText>
+    <MudPaper Class="pa-4">
+      <MudButton StartIcon="@Icons.Phosphor.Regular.Joystick" Variant="Variant.Outlined">
+        I am a MudButton
+      </MudButton>
+    </MudPaper>
+  </MudItem>
+</MudGrid>
 
-Welcome to your new app.
 
-<!-- Using the Phosphor icon library -->
-<div style="font-size: 42px">
-  <i class="ph ph-smiley"></i>
-  <i class="ph ph-fill ph-heart" style="color: hotpink"></i>
-  <i class="ph ph-thin ph-cube"></i>
-</div>
 
-<!-- Usage -->
-<div>
-  <MudIcon Icon="@Icons.Phosphor.Regular.Smiley" Title="Smiley"/>
-  <MudIcon Icon="@Icons.Phosphor.Regular.Heart" Title="Heart"/>
-  <MudIcon Icon="@Icons.Phosphor.Regular.Cube" Title="Cube"/>
-  <MudIcon Icon="@Icons.Phosphor.Regular.Airplane" Title="Airplane"/>
-  <MudIcon Icon="@Icons.Phosphor.Regular.Balloon" Title="Balloon"/>
-  <MudIcon Icon="@Icons.Phosphor.Regular.Hamburger" Title="Hamburger"/>
-</div>
 
-<!-- Color -->
-<div>
-  <MudIcon Icon="@Icons.Phosphor.Regular.Radioactive" Color="Color.Default" />
-  <MudIcon Icon="@Icons.Phosphor.Regular.Radioactive" Color="Color.Primary" />
-  <MudIcon Icon="@Icons.Phosphor.Regular.Radioactive" Color="Color.Secondary" />
-  <MudIcon Icon="@Icons.Phosphor.Regular.Radioactive" Color="Color.Success" />
-  <MudIcon Icon="@Icons.Phosphor.Regular.Radioactive" Color="Color.Info" />
-  <MudIcon Icon="@Icons.Phosphor.Regular.Radioactive" Color="Color.Warning" />
-  <MudIcon Icon="@Icons.Phosphor.Regular.Radioactive" Color="Color.Error" />
-  <MudIcon Icon="@Icons.Phosphor.Regular.Radioactive" Color="Color.Dark" />
-</div>
 
-<!-- Size -->
-<div>
-  <MudIcon Icon="@Icons.Phosphor.Regular.Radioactive" Size="Size.Small" />
-  <MudIcon Icon="@Icons.Phosphor.Regular.Radioactive" Size="Size.Medium" />
-  <MudIcon Icon="@Icons.Phosphor.Regular.Radioactive" Size="Size.Large" />
-</div>
-
-<!-- Variants -->
-<div>
-  <MudIcon Icon="@Icons.Phosphor.Regular.ThumbsUp" Style="font-size: 4rem;" />
-  <MudIcon Icon="@Icons.Phosphor.Regular.ThumbsUp"  Style="font-size: 4rem;" />
-  <MudIcon Icon="@Icons.Phosphor.Regular.ThumbsUp"  Style="font-size: 4rem;" />
-  <MudIcon Icon="@Icons.Phosphor.Regular.ThumbsUp"  Style="font-size: 4rem;" />
-  <MudIcon Icon="@Icons.Phosphor.Regular.ThumbsUp"  Style="font-size: 4rem;" />
-  <MudIcon Icon="@Icons.Phosphor.Regular.ThumbsUp"  Style="font-size: 4rem;" />
-</div>

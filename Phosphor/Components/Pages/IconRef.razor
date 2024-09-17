@@ -1,0 +1,103 @@
+@page "/reference"
+@inject IJSRuntime JS
+@inject ISnackbar Snackbar
+
+<PageTitle>Reference</PageTitle>
+
+<MudGrid Class="pa-4">
+  <MudItem xs="12">
+    <MudText Typo="Typo.h4">Phosphor Icons Reference</MudText>
+    <MudText Typo="Typo.body1">Over 1200 Phosphor icons.</MudText>
+  </MudItem>
+  <MudItem xs="12">
+    <MudText Typo="Typo.h5" GutterBottom>Icons</MudText>
+    <MudStack Row Class="mb-4">
+      @foreach(var style in Enum.GetValues<IconWeight>())
+      {
+        if (style == _iconWeight)
+        {
+          <MudButton
+            Variant="Variant.Outlined"
+            Color="Color.Primary"
+            StartIcon="@Icons.Phosphor.Regular.CheckFat">
+            @style
+          </MudButton>
+        }
+        else
+        {
+          <MudButton
+            Variant="Variant.Outlined"
+            @onclick="() => SetIconStyle(style)">
+            @style
+          </MudButton>
+        }
+      }
+    </MudStack>
+    @foreach(var icon in _icons)
+    {
+      <MudTooltip 
+        Text="@icon.Name"
+        Duration="200"
+        Delay="200"
+        Arrow Color="Color.Primary"
+        Class="mt-n3"
+        Style="cursor: pointer;">
+        <div 
+          class="pa-2"
+          style="display: inline-block; cursor: pointer;"
+          @onclick="() => CopyToClipboard(icon.Name)">
+          <MudIcon Icon="@icon.Value" Size="Size.Large" />
+        </div>
+      </MudTooltip>
+    }
+  </MudItem>
+</MudGrid>
+
+@code {
+
+  private IconWeight _iconWeight = IconWeight.Regular;
+  private List<IconDefinition> _icons = [];
+
+  protected override void OnInitialized()
+  {
+    LoadIcons();
+    base.OnInitialized();
+  }
+
+  private void LoadIcons()
+  {
+    var iconType = _iconWeight switch
+    {
+      IconWeight.Regular => typeof(Icons.Phosphor.Regular),
+      IconWeight.Thin => typeof(Icons.Phosphor.Thin),
+      IconWeight.Light => typeof(Icons.Phosphor.Light),
+      IconWeight.Bold => typeof(Icons.Phosphor.Bold),
+      IconWeight.Fill => typeof(Icons.Phosphor.Fill),
+      IconWeight.Duotone => typeof(Icons.Phosphor.Duotone),
+      _ => throw new ArgumentOutOfRangeException()
+    };
+    
+    _icons = iconType
+      .GetFields()
+      .Select(fieldInfo => new IconDefinition(fieldInfo.Name, fieldInfo.GetValue(null)!.ToString()!))
+      .ToList();
+  }
+  
+  private void SetIconStyle(IconWeight weight)
+  {
+    _iconWeight = weight;
+    LoadIcons();
+  }
+  
+  private async void CopyToClipboard(string iconName)
+  {
+    string icon = 
+      $"""<MudIcon Icon="@Icons.Phosphor.{_iconWeight}.{iconName}" Size="Size.Medium" />""";
+    
+    await JS.InvokeVoidAsync("navigator.clipboard.writeText", icon);
+    Snackbar.Add($"Copied {iconName} to clipboard", Severity.Info);
+  }
+  
+  record IconDefinition(string Name, string Value);
+
+}

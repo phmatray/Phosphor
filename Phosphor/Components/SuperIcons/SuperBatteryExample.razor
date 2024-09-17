@@ -1,0 +1,54 @@
+<MudGrid>
+  <MudItem xs="12">
+    <MudText Typo="Typo.h5" Align="Align.Center">
+      Super Battery Icon
+    </MudText>
+  </MudItem>
+  <MudItem xs="6">
+    <MudStack Justify="Justify.Center" AlignItems="AlignItems.Center">
+      <SuperBatteryIcon
+        style="font-size: 6rem;"
+        Weight="_weight"
+        State="_state"
+        BatteryOrientation="_orientation"
+        Level="_level"/>
+    </MudStack>
+  </MudItem>
+  <MudItem xs="6">
+    <MudStack>
+      <MudSelect Label="Weight" @bind-Value="_weight">
+        @foreach (var weight in Enum.GetValues<IconWeight>())
+        {
+          <MudSelectItem Value="@weight">@weight</MudSelectItem>
+        }
+      </MudSelect>
+      <MudSelect Label="State" @bind-Value="_state">
+        @foreach(var state in Enum.GetValues<BatteryState>())
+        {
+          <MudSelectItem Value="@state">@state</MudSelectItem>
+        }
+      </MudSelect>
+      <MudSelect Label="Orientation" @bind-Value="_orientation">
+        @foreach (var orientation in Enum.GetValues<BatteryOrientation>())
+        {
+          <MudSelectItem Value="@orientation">@orientation</MudSelectItem>
+        }
+      </MudSelect>
+      <MudSelect Label="Level" @bind-Value="_level">
+        @foreach (var level in Enum.GetValues<BatteryLevel>())
+        {
+          <MudSelectItem Value="@level">@level</MudSelectItem>
+        }
+      </MudSelect>
+    </MudStack>
+  </MudItem>
+</MudGrid>
+
+@code {
+  
+  private IconWeight _weight = IconWeight.Regular;
+  private BatteryState _state = BatteryState.Normal;
+  private BatteryOrientation _orientation = BatteryOrientation.Horizontal;
+  private BatteryLevel _level = BatteryLevel.Medium;
+  
+}
