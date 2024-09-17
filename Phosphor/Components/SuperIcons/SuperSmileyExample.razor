@@ -1,0 +1,38 @@
+<MudGrid>
+  <MudItem xs="12">
+    <MudText Typo="Typo.h5" Align="Align.Center">
+      Super Smiley Icon
+    </MudText>
+  </MudItem>
+  <MudItem xs="6">
+    <MudStack Justify="Justify.Center" AlignItems="AlignItems.Center">
+      <SuperSmileyIcon
+        style="font-size: 6rem;"
+        Weight="_weight"
+        Face="_face"/>
+    </MudStack>
+  </MudItem>
+  <MudItem xs="6">
+    <MudStack>
+      <MudSelect Label="Weight" @bind-Value="_weight">
+        @foreach (var weight in Enum.GetValues<IconWeight>())
+        {
+          <MudSelectItem Value="@weight">@weight</MudSelectItem>
+        }
+      </MudSelect>
+      <MudSelect Label="Face" @bind-Value="_face">
+        @foreach (var face in Enum.GetValues<SmileyFace>())
+        {
+          <MudSelectItem Value="@face">@face</MudSelectItem>
+        }
+      </MudSelect>
+    </MudStack>
+  </MudItem>
+</MudGrid>
+
+@code {
+  
+  private IconWeight _weight = IconWeight.Regular;
+  private SmileyFace _face = SmileyFace.Normal;
+  
+}

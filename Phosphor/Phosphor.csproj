@@ -18,9 +18,46 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="..\output\Icons.cs">
-      <Link>Icons.cs</Link>
-    </Compile>
+    <ProjectReference Include="..\MudBlazor.Phosphor\MudBlazor.Phosphor.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\bold\Phosphor-Bold.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\bold\Phosphor-Bold.ttf" />
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\bold\Phosphor-Bold.woff" />
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\bold\Phosphor-Bold.woff2" />
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\bold\selection.json" />
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\bold\style.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\duotone\Phosphor-Duotone.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\duotone\Phosphor-Duotone.ttf" />
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\duotone\Phosphor-Duotone.woff" />
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\duotone\Phosphor-Duotone.woff2" />
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\duotone\selection.json" />
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\duotone\style.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\fill\Phosphor-Fill.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\fill\Phosphor-Fill.ttf" />
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\fill\Phosphor-Fill.woff" />
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\fill\Phosphor-Fill.woff2" />
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\fill\selection.json" />
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\fill\style.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\light\Phosphor-Light.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\light\Phosphor-Light.ttf" />
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\light\Phosphor-Light.woff" />
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\light\Phosphor-Light.woff2" />
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\light\selection.json" />
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\light\style.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\regular\Phosphor.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\regular\Phosphor.ttf" />
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\regular\Phosphor.woff" />
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\regular\Phosphor.woff2" />
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\regular\selection.json" />
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\regular\style.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\thin\Phosphor-Thin.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\thin\Phosphor-Thin.ttf" />
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\thin\Phosphor-Thin.woff" />
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\thin\Phosphor-Thin.woff2" />
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\thin\selection.json" />
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\thin\style.css" />
   </ItemGroup>
 
 </Project>
