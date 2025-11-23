@@ -1,6 +1,6 @@
-using static MudBlazor.Phosphor.FileValue;
+using static Phosphor.MudBlazor.FileValue;
 
-namespace MudBlazor.Phosphor;
+namespace Phosphor.MudBlazor;
 
 public class SuperFileIcon : SuperIcon
 {

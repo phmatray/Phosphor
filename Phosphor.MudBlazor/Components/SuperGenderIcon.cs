@@ -1,6 +1,6 @@
-using static MudBlazor.Phosphor.GenderValue;
+using static Phosphor.MudBlazor.GenderValue;
 
-namespace MudBlazor.Phosphor;
+namespace Phosphor.MudBlazor;
 
 public class SuperGenderIcon : SuperIcon
 {

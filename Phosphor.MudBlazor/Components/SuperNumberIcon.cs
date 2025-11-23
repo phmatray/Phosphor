@@ -1,7 +1,7 @@
-using static MudBlazor.Phosphor.NumberValue;
-using static MudBlazor.Phosphor.NumberVariant;
+using static Phosphor.MudBlazor.NumberValue;
+using static Phosphor.MudBlazor.NumberVariant;
 
-namespace MudBlazor.Phosphor;
+namespace Phosphor.MudBlazor;
 
 public class SuperNumberIcon : SuperIcon
 {

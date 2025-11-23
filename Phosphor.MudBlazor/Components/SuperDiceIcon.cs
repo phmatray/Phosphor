@@ -1,6 +1,6 @@
-using static MudBlazor.Phosphor.DiceValue;
+using static Phosphor.MudBlazor.DiceValue;
 
-namespace MudBlazor.Phosphor;
+namespace Phosphor.MudBlazor;
 
 public class SuperDiceIcon : SuperIcon
 {

@@ -1,4 +1,4 @@
-namespace MudBlazor.Phosphor;
+namespace Phosphor.MudBlazor;
 
 public enum IconWeight
 {

@@ -2,7 +2,7 @@
 
 global using Microsoft.AspNetCore.Components;
 
-global using static MudBlazor.Phosphor.IconWeight;
+global using static Phosphor.MudBlazor.IconWeight;
 
 global using PhosphorRegular = Phosphor.Components.Icons.Phosphor.Regular;
 global using PhosphorThin = Phosphor.Components.Icons.Phosphor.Thin;

@@ -1,4 +1,4 @@
-# MudBlazor.Phosphor
+# Phosphor.MudBlazor
 
 A flexible, beautiful icon family for MudBlazor applications. This library provides seamless integration of [Phosphor Icons](https://phosphoricons.com/) with [MudBlazor](https://mudblazor.com/) components.
 
@@ -14,7 +14,7 @@ A flexible, beautiful icon family for MudBlazor applications. This library provi
 ## Installation
 
 ```bash
-dotnet add package MudBlazor.PhosphorIcons
+dotnet add package Phosphor.MudBlazor
 ```
 
 ## Quick Start
@@ -22,7 +22,7 @@ dotnet add package MudBlazor.PhosphorIcons
 ### 1. Add the namespace to your `_Imports.razor`:
 
 ```razor
-@using MudBlazor.Phosphor
+@using Phosphor.MudBlazor
 @using static Phosphor.Components.Icons
 ```
 
@@ -137,7 +137,7 @@ All Super Icons inherit from `SuperIcon` and support the `Weight` parameter to c
 
 ```
 Phosphor/
-├── MudBlazor.PhosphorIcons/    # Main library package
+├── Phosphor.MudBlazor/    # Main library package
 │   ├── Components/              # Super Icon components
 │   ├── Abstractions/            # Base classes and interfaces
 │   └── Models/                  # Enums and models
@@ -182,7 +182,7 @@ The build process will:
 2. Parse icon font metadata from `input/fonts/{style}/selection.json` files
 3. Convert icon names from kebab-case to PascalCase
 4. Generate 9,072 type-safe icon constants in `output/Icons.cs`
-5. Link the generated file into the MudBlazor.PhosphorIcons project
+5. Link the generated file into the Phosphor.MudBlazor project
 
 ### Running the Demo
 
@@ -214,11 +214,11 @@ To update to a newer version of Phosphor Icons:
 To create a NuGet package:
 
 ```bash
-# Generate icons, build, and pack (creates artifacts/MudBlazor.PhosphorIcons.{version}.nupkg)
+# Generate icons, build, and pack (creates artifacts/Phosphor.MudBlazor.{version}.nupkg)
 ./build.sh Pack
 
 # Publish to NuGet.org
-dotnet nuget push artifacts/MudBlazor.PhosphorIcons.{version}.nupkg --api-key YOUR_API_KEY --source https://api.nuget.org/v3/index.json
+dotnet nuget push artifacts/Phosphor.MudBlazor.{version}.nupkg --api-key YOUR_API_KEY --source https://api.nuget.org/v3/index.json
 ```
 
 The package includes:

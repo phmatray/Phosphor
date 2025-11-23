@@ -1,8 +1,8 @@
-using static MudBlazor.Phosphor.BatteryState;
-using static MudBlazor.Phosphor.BatteryLevel;
-using static MudBlazor.Phosphor.BatteryOrientation;
+using static Phosphor.MudBlazor.BatteryState;
+using static Phosphor.MudBlazor.BatteryLevel;
+using static Phosphor.MudBlazor.BatteryOrientation;
 
-namespace MudBlazor.Phosphor;
+namespace Phosphor.MudBlazor;
 
 public class SuperBatteryIcon : SuperIcon
 {

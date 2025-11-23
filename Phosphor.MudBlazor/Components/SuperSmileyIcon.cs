@@ -1,6 +1,6 @@
-using static MudBlazor.Phosphor.SmileyFace;
+using static Phosphor.MudBlazor.SmileyFace;
 
-namespace MudBlazor.Phosphor;
+namespace Phosphor.MudBlazor;
 
 public class SuperSmileyIcon : SuperIcon
 {

@@ -1,4 +1,6 @@
-namespace MudBlazor.Phosphor;
+using MudBlazor;
+
+namespace Phosphor.MudBlazor;
 
 public abstract class SuperIcon : MudIcon
 {
