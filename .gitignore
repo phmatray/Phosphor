@@ -1,5 +1,16 @@
+# Build outputs
 bin/
 obj/
 /packages/
+
+# JetBrains Rider / ReSharper
+.idea/
 riderModule.iml
 /_ReSharper.Caches/
+*.DotSettings.user
+
+# NUKE Build
+.nuke/
+
+# macOS
+.DS_Store
