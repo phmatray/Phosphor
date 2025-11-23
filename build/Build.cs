@@ -5,6 +5,8 @@ using System.Text;
 using Helpers;
 using Nuke.Common;
 using Nuke.Common.IO;
+using Nuke.Common.Tools.DotNet;
+using static Nuke.Common.Tools.DotNet.DotNetTasks;
 using Phosphor;
 using Serilog;
 
@@ -23,6 +25,8 @@ class Build : NukeBuild
     
     AbsolutePath InputDirectory => RootDirectory / "input";
     AbsolutePath OutputDirectory => RootDirectory / "output";
+    AbsolutePath ArtifactsDirectory => RootDirectory / "artifacts";
+    AbsolutePath ProjectFile => RootDirectory / "MudBlazor.PhosphorIcons" / "MudBlazor.PhosphorIcons.csproj";
 
     readonly string[] Styles = ["Bold", "Duotone", "Fill", "Light", "Regular", "Thin"];
 
@@ -104,7 +108,41 @@ class Build : NukeBuild
 
         Log.Information($"Generated {fileName}");
     }
-    
+
+    Target Pack => _ => _
+        .DependsOn(Compile)
+        .Executes(() =>
+        {
+            Log.Information("Creating NuGet package...");
+
+            ArtifactsDirectory.CreateOrCleanDirectory();
+
+            DotNetPack(s => s
+                .SetProject(ProjectFile)
+                .SetConfiguration(Configuration)
+                .SetOutputDirectory(ArtifactsDirectory)
+                .EnableNoBuild()
+                .EnableIncludeSymbols()
+                .SetSymbolPackageFormat(DotNetSymbolPackageFormat.snupkg)
+            );
+
+            Log.Information($"NuGet package created in: {ArtifactsDirectory}");
+        });
+
+    Target Compile => _ => _
+        .DependsOn(GenerateIconsClass)
+        .Executes(() =>
+        {
+            Log.Information("Building solution...");
+
+            DotNetBuild(s => s
+                .SetProjectFile(RootDirectory / "Phosphor.sln")
+                .SetConfiguration(Configuration)
+            );
+
+            Log.Information("Build completed successfully!");
+        });
+
     private List<IconName> GetIconNames(string style)
     {
         // read wwwroot/fonts/{style}/selection.json

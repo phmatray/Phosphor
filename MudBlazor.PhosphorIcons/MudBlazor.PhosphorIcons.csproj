@@ -5,6 +5,27 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>MudBlazor.Phosphor</RootNamespace>
+
+    <!-- NuGet Package Properties -->
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageId>MudBlazor.PhosphorIcons</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Philippe Matray</Authors>
+    <Company>Atypical Consulting SRL</Company>
+    <Product>MudBlazor.PhosphorIcons</Product>
+    <Description>A flexible, beautiful icon family for MudBlazor applications. This library provides seamless integration of Phosphor Icons (1,500+ icons in 6 styles) with MudBlazor components, including 9,000+ type-safe constants and specialized Super Icon components.</Description>
+    <PackageTags>blazor;mudblazor;icons;phosphor;ui;components;wasm;webassembly;razor</PackageTags>
+    <PackageProjectUrl>https://github.com/phmatray/Phosphor</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/phmatray/Phosphor.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReleaseNotes>Initial release with 1,512 Phosphor Icons (v2.1.2) in 6 styles, type-safe constants, and Super Icon components.</PackageReleaseNotes>
+    <Copyright>Copyright (c) 2025 Philippe Matray</Copyright>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
 
@@ -15,6 +36,11 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="10.0.0" />
     <PackageReference Include="MudBlazor" Version="8.15.0" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
   <ItemGroup>

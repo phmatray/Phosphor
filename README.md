@@ -201,13 +201,32 @@ The icon constants are automatically generated from the Phosphor icon fonts (v2.
 2. Parses 1,512 unique icon names using the first tag from each icon's metadata
 3. Converts kebab-case names (e.g., `thumbs-up`) to PascalCase properties (e.g., `ThumbsUp`)
 4. Generates CSS class strings based on icon weight (e.g., `"ph-bold ph-thumbs-up"`)
-5. Creates 9,072 type-safe C# constants (1,512 icons × 6 weights)
-6. Outputs the result to `output/Icons.cs`
+5. Creates 9,072 type-safe C# constants (1,512 icons × 6 weights) split across 7 partial class files
+6. Outputs the result to `output/` directory
 
 To update to a newer version of Phosphor Icons:
 1. Download the latest web fonts from [@phosphor-icons/web](https://www.npmjs.com/package/@phosphor-icons/web)
 2. Replace files in `input/fonts/` directory
 3. Run `./build.sh GenerateIconsClass` to regenerate
+
+## Publishing NuGet Package
+
+To create a NuGet package:
+
+```bash
+# Generate icons, build, and pack (creates artifacts/MudBlazor.PhosphorIcons.{version}.nupkg)
+./build.sh Pack
+
+# Publish to NuGet.org
+dotnet nuget push artifacts/MudBlazor.PhosphorIcons.{version}.nupkg --api-key YOUR_API_KEY --source https://api.nuget.org/v3/index.json
+```
+
+The package includes:
+- Compiled library (.dll) with icon constants and Super Icon components
+- All Phosphor icon fonts (Bold, Duotone, Fill, Light, Regular, Thin) as static web assets
+- Main CSS file that imports all font styles
+- Symbol package (.snupkg) for debugging support
+- README and license information
 
 The generated file structure:
 

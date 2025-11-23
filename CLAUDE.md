@@ -20,8 +20,14 @@ This is a MudBlazor icon library that integrates Phosphor Icons (1,200+ icons in
 ./build.sh GenerateIconsClass   # macOS/Linux
 build.cmd GenerateIconsClass    # Windows CMD
 
-# Build the solution
+# Build the solution using NUKE
+./build.sh Compile  # Generates icons + builds solution
+
+# Build the solution using dotnet CLI
 dotnet build
+
+# Create NuGet package (generates icons, builds, and packs)
+./build.sh Pack  # Creates package in artifacts/ directory
 
 # Run all tests
 dotnet test
