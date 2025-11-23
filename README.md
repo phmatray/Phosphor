@@ -4,12 +4,12 @@ A flexible, beautiful icon family for MudBlazor applications. This library provi
 
 ## Features
 
-- **1,200+ Icons**: Access to the complete Phosphor Icons library
+- **1,500+ Icons**: Access to the complete Phosphor Icons library (v2.1.2)
 - **6 Icon Styles**: Choose from Thin, Light, Regular, Bold, Fill, and Duotone variants
+- **9,000+ Type-Safe Constants**: Strongly-typed icon constants (1,512 icons × 6 styles) for IntelliSense support
 - **MudBlazor Integration**: Works seamlessly with MudIcon and other MudBlazor components
-- **Super Icons**: Specialized icon components with parameterized selection (e.g., dice values, battery levels)
-- **Type-Safe**: Strongly-typed icon constants for IntelliSense support
-- **.NET 8.0**: Built on the latest .NET platform
+- **Super Icons**: Specialized icon components with parameterized selection (e.g., dice values, battery levels, file types)
+- **.NET 10.0**: Built on the latest .NET platform
 
 ## Installation
 
@@ -155,8 +155,8 @@ This project uses [NUKE](https://nuke.build/) as the build system.
 
 ### Prerequisites
 
-- .NET 8.0 SDK or later
-- Phosphor icon fonts (place in `input/fonts/` directory)
+- .NET 10.0 SDK or later
+- Phosphor icon fonts (included in repository)
 
 ### Build Steps
 
@@ -165,17 +165,24 @@ This project uses [NUKE](https://nuke.build/) as the build system.
 git clone https://github.com/yourusername/Phosphor.git
 cd Phosphor
 
-# Run the build
-./build.sh         # Linux/macOS
-./build.cmd        # Windows (CMD)
-./build.ps1        # Windows (PowerShell)
+# Generate Icons.cs from font files
+./build.sh GenerateIconsClass   # Linux/macOS
+./build.cmd GenerateIconsClass  # Windows (CMD)
+./build.ps1 GenerateIconsClass  # Windows (PowerShell)
+
+# Build the solution
+dotnet build
+
+# Run tests
+dotnet test
 ```
 
 The build process will:
 1. Clean the output directory
-2. Parse icon font metadata from `selection.json` files
-3. Generate the `Icons.cs` file with all icon constants
-4. Build the solution
+2. Parse icon font metadata from `input/fonts/{style}/selection.json` files
+3. Convert icon names from kebab-case to PascalCase
+4. Generate 9,072 type-safe icon constants in `output/Icons.cs`
+5. Link the generated file into the MudBlazor.PhosphorIcons project
 
 ### Running the Demo
 
@@ -188,11 +195,19 @@ Then navigate to `https://localhost:5001` to see the demo application.
 
 ## Icon Generation
 
-The icon constants are automatically generated from the Phosphor icon fonts using a custom NUKE build script. The build script:
+The icon constants are automatically generated from the Phosphor icon fonts (v2.1.2) using a custom NUKE build script (`build/Build.cs`). The build script:
 
-1. Reads icon metadata from `input/fonts/{style}/selection.json`
-2. Generates C# constants for each icon and style
-3. Outputs the result to `output/Icons.cs`
+1. Reads icon metadata from `input/fonts/{style}/selection.json` files for all 6 styles
+2. Parses 1,512 unique icon names using the first tag from each icon's metadata
+3. Converts kebab-case names (e.g., `thumbs-up`) to PascalCase properties (e.g., `ThumbsUp`)
+4. Generates CSS class strings based on icon weight (e.g., `"ph-bold ph-thumbs-up"`)
+5. Creates 9,072 type-safe C# constants (1,512 icons × 6 weights)
+6. Outputs the result to `output/Icons.cs`
+
+To update to a newer version of Phosphor Icons:
+1. Download the latest web fonts from [@phosphor-icons/web](https://www.npmjs.com/package/@phosphor-icons/web)
+2. Replace files in `input/fonts/` directory
+3. Run `./build.sh GenerateIconsClass` to regenerate
 
 The generated file structure:
 
