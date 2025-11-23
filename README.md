@@ -137,16 +137,18 @@ All Super Icons inherit from `SuperIcon` and support the `Weight` parameter to c
 
 ```
 Phosphor/
-├── Phosphor.MudBlazor/    # Main library package
-│   ├── Components/              # Super Icon components
-│   ├── Abstractions/            # Base classes and interfaces
-│   └── Models/                  # Enums and models
-├── Phosphor/                    # Demo web application
-│   └── Components/Pages/        # Example pages
-├── Phosphor.UnitTests/          # Unit tests
+├── src/
+│   ├── Phosphor.MudBlazor/      # Main library package
+│   │   ├── Components/          # Super Icon components
+│   │   ├── Abstractions/        # Base classes and interfaces
+│   │   └── Models/              # Enums and models
+│   ├── Phosphor/                # Demo web application
+│   │   └── Components/Pages/    # Example pages
+│   └── Phosphor.UnitTests/      # Unit tests
 ├── build/                       # NUKE build configuration
 ├── input/                       # Source icon fonts
-└── output/                      # Generated Icons.cs
+├── output/                      # Generated Icons.cs files
+└── artifacts/                   # Build outputs
 ```
 
 ## Building from Source
@@ -163,7 +165,7 @@ This project uses [NUKE](https://nuke.build/) as the build system.
 ```bash
 # Clone the repository
 git clone https://github.com/yourusername/Phosphor.git
-cd Phosphor
+cd src/Phosphor
 
 # Generate Icons.cs from font files
 ./build.sh GenerateIconsClass   # Linux/macOS
@@ -187,7 +189,7 @@ The build process will:
 ### Running the Demo
 
 ```bash
-cd Phosphor
+cd src/Phosphor
 dotnet run
 ```
 

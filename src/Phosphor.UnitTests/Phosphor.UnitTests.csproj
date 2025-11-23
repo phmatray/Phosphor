@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="..\build\Helpers\IconName.cs" Link="IconName.cs" />
+    <Compile Include="..\..\build\Helpers\IconName.cs" Link="IconName.cs" />
   </ItemGroup>
 
 </Project>

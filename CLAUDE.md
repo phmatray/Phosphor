@@ -5,12 +5,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Project Overview
 
 This is a MudBlazor icon library that integrates Phosphor Icons (1,200+ icons in 6 styles) into MudBlazor components. The project consists of:
-- **Phosphor.MudBlazor**: Blazor component library providing icon components
-- **Phosphor**: Demo Blazor web application showcasing the icons
+- **src/Phosphor.MudBlazor**: Blazor component library providing icon components
+- **src/Phosphor**: Demo Blazor web application showcasing the icons
+- **src/Phosphor.UnitTests**: Unit tests using NUnit
 - **build**: NUKE build system that auto-generates icon classes from Phosphor font files
-- **Phosphor.UnitTests**: Unit tests using NUnit
 - **input/fonts**: Source Phosphor font files with metadata (selection.json)
-- **output**: Generated Icons.cs file (linked into library project)
+- **output**: Generated Icons.cs files (linked into library project)
 
 ## Common Commands
 
@@ -36,7 +36,7 @@ dotnet test
 dotnet test --filter "FullyQualifiedName~YourTestName"
 
 # Run the demo application (https://localhost:5001)
-dotnet run --project Phosphor/Phosphor.csproj
+dotnet run --project src/Phosphor/Phosphor.csproj
 
 # Clean output directory
 ./build.ps1 Clean  # or ./build.sh Clean
@@ -112,13 +112,13 @@ public class SuperDiceIcon : SuperIcon {
 ## Development Workflow
 
 ### Adding New Super Icon Components
-1. Create new class in `Phosphor.MudBlazor/Components/` inheriting from `SuperIcon`
+1. Create new class in `src/Phosphor.MudBlazor/Components/` inheriting from `SuperIcon`
 2. Define an enum for icon variations (e.g., `public enum BatteryLevel { Empty, Low, High }`)
 3. Add `[Parameter] public YourEnum Value { get; set; }`
 4. Implement `GetIcon()` with exhaustive pattern matching for all (Weight × Value) combinations
 5. Handle all 6 weights: Regular, Thin, Light, Bold, Fill, Duotone
 6. Use fully-qualified enum names if ambiguous (e.g., `FileValue.Lock`)
-7. Add demo page in `Phosphor/Components/SuperIcons/` or `Phosphor/Components/Pages/`
+7. Add demo page in `src/Phosphor/Components/SuperIcons/` or `src/Phosphor/Components/Pages/`
 
 ### Updating Phosphor Fonts
 1. Download new Phosphor font files from phosphoricons.com

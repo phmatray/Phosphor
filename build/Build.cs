@@ -26,7 +26,7 @@ class Build : NukeBuild
     AbsolutePath InputDirectory => RootDirectory / "input";
     AbsolutePath OutputDirectory => RootDirectory / "output";
     AbsolutePath ArtifactsDirectory => RootDirectory / "artifacts";
-    AbsolutePath ProjectFile => RootDirectory / "Phosphor.MudBlazor" / "Phosphor.MudBlazor.csproj";
+    AbsolutePath ProjectFile => RootDirectory / "src" / "Phosphor.MudBlazor" / "Phosphor.MudBlazor.csproj";
 
     readonly string[] Styles = ["Bold", "Duotone", "Fill", "Light", "Regular", "Thin"];
 
