@@ -21,6 +21,24 @@
     <Compile Include="..\output\Icons.cs">
       <Link>Icons.cs</Link>
     </Compile>
+    <Compile Include="..\output\Icons.Phosphor.Bold.cs">
+      <Link>Icons.Phosphor.Bold.cs</Link>
+    </Compile>
+    <Compile Include="..\output\Icons.Phosphor.Duotone.cs">
+      <Link>Icons.Phosphor.Duotone.cs</Link>
+    </Compile>
+    <Compile Include="..\output\Icons.Phosphor.Fill.cs">
+      <Link>Icons.Phosphor.Fill.cs</Link>
+    </Compile>
+    <Compile Include="..\output\Icons.Phosphor.Light.cs">
+      <Link>Icons.Phosphor.Light.cs</Link>
+    </Compile>
+    <Compile Include="..\output\Icons.Phosphor.Regular.cs">
+      <Link>Icons.Phosphor.Regular.cs</Link>
+    </Compile>
+    <Compile Include="..\output\Icons.Phosphor.Thin.cs">
+      <Link>Icons.Phosphor.Thin.cs</Link>
+    </Compile>
   </ItemGroup>
 
 </Project>

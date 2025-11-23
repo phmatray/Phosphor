@@ -32,7 +32,8 @@ public class NamespaceBuilder(string namespaceName)
 public class ClassBuilder(
     string className,
     string accessModifier = "public",
-    bool isStatic = false)
+    bool isStatic = false,
+    bool isPartial = false)
 {
     private readonly List<ClassBuilder> NestedClasses = [];
     private readonly List<ConstantBuilder> Constants = [];
@@ -53,9 +54,10 @@ public class ClassBuilder(
     {
         var indent = new string(' ', indentLevel * 4);
         var staticText = isStatic ? "static " : "";
+        var partialText = isPartial ? "partial " : "";
         var sb = new StringBuilder();
 
-        sb.AppendLine($"{indent}{accessModifier} {staticText}class {className}");
+        sb.AppendLine($"{indent}{accessModifier} {staticText}{partialText}class {className}");
         sb.AppendLine($"{indent}{{");
 
         foreach (var constant in Constants)
@@ -79,9 +81,12 @@ public class ConstantBuilder(
     string value,
     string accessModifier = "public")
 {
+    private static readonly HashSet<string> ReservedNames = ["Equals", "GetHashCode", "GetType", "ToString"];
+
     public string Build(int indentLevel)
     {
         var indent = new string(' ', indentLevel * 4);
-        return $"{indent}{accessModifier} const {type} {name} = \"{value}\";";
+        var newKeyword = ReservedNames.Contains(name) ? "new " : "";
+        return $"{indent}{accessModifier} {newKeyword}const {type} {name} = \"{value}\";";
     }
 }

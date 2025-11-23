@@ -38,41 +38,72 @@ class Build : NukeBuild
         .DependsOn(Clean)
         .Executes(() =>
         {
-            Log.Information("Generating `Icons` class");
-            
-            var iconsNamespace = new NamespaceBuilder("Phosphor.Components");
-            var iconsClass = new ClassBuilder("Icons", isStatic: true);
-            var phosphorClass = new ClassBuilder("Phosphor", isStatic: true);
-            
+            Log.Information("Generating `Icons` class files");
+
+            // Generate main Icons.cs file with empty partial class structure
+            GenerateMainIconsFile();
+
+            // Generate one file per style with constants
             foreach (var style in Styles)
             {
-                var styleClass = new ClassBuilder(style, isStatic: true);
-            
-                foreach (var iconName in GetIconNames(style))
-                {
-                    //ph-thin ph-thumbs-up
-                    var constant = new ConstantBuilder(
-                        "string",
-                        iconName.PropertyName,
-                        iconName.CssClasses);
-                    
-                    styleClass.AddConstant(constant);
-                }
-
-                phosphorClass.AddNestedClass(styleClass);
+                GenerateStyleIconsFile(style);
             }
 
-            iconsClass.AddNestedClass(phosphorClass);
-            iconsNamespace.AddClass(iconsClass);
-
-            string code = iconsNamespace.Build();
-        
-            // Write code to file
-            var iconsFile = OutputDirectory / "Icons.cs";
-            iconsFile.WriteAllText(code);
-
-            Log.Information("Icons.cs file has been generated");
+            Log.Information($"Generated 7 Icons class files (1 main + {Styles.Length} styles)");
         });
+
+    private void GenerateMainIconsFile()
+    {
+        var iconsNamespace = new NamespaceBuilder("Phosphor.Components");
+        var iconsClass = new ClassBuilder("Icons", isStatic: true, isPartial: true);
+        var phosphorClass = new ClassBuilder("Phosphor", isStatic: true, isPartial: true);
+
+        // Add empty style classes
+        foreach (var style in Styles)
+        {
+            var styleClass = new ClassBuilder(style, isStatic: true, isPartial: true);
+            phosphorClass.AddNestedClass(styleClass);
+        }
+
+        iconsClass.AddNestedClass(phosphorClass);
+        iconsNamespace.AddClass(iconsClass);
+
+        string code = iconsNamespace.Build();
+        var iconsFile = OutputDirectory / "Icons.cs";
+        iconsFile.WriteAllText(code);
+
+        Log.Information("Generated Icons.cs (main file)");
+    }
+
+    private void GenerateStyleIconsFile(string style)
+    {
+        var iconsNamespace = new NamespaceBuilder("Phosphor.Components");
+        var iconsClass = new ClassBuilder("Icons", isStatic: true, isPartial: true);
+        var phosphorClass = new ClassBuilder("Phosphor", isStatic: true, isPartial: true);
+        var styleClass = new ClassBuilder(style, isStatic: true, isPartial: true);
+
+        // Add icon constants for this style
+        foreach (var iconName in GetIconNames(style))
+        {
+            var constant = new ConstantBuilder(
+                "string",
+                iconName.PropertyName,
+                iconName.CssClasses);
+
+            styleClass.AddConstant(constant);
+        }
+
+        phosphorClass.AddNestedClass(styleClass);
+        iconsClass.AddNestedClass(phosphorClass);
+        iconsNamespace.AddClass(iconsClass);
+
+        string code = iconsNamespace.Build();
+        var fileName = $"Icons.Phosphor.{style}.cs";
+        var iconsFile = OutputDirectory / fileName;
+        iconsFile.WriteAllText(code);
+
+        Log.Information($"Generated {fileName}");
+    }
     
     private List<IconName> GetIconNames(string style)
     {
