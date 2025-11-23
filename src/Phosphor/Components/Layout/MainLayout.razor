@@ -30,21 +30,10 @@
 
 @code {
   bool _drawerOpen = true;
-  AppTheme _theme = new();
+  global::MudBlazor.MudTheme _theme = new();
 
   void DrawerToggle()
   {
     _drawerOpen = !_drawerOpen;
-  }
-
-  class AppTheme : MudTheme
-  {
-    public AppTheme()
-    {
-      PaletteLight = new PaletteLight
-      {
-        Background = "#faf9f6" // Off White
-      };
-    }
   }
 }
