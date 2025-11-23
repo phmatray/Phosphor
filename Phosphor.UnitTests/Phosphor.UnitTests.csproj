@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\build\_build.csproj" />
+    <Compile Include="..\build\Helpers\IconName.cs" Link="IconName.cs" />
   </ItemGroup>
 
 </Project>

@@ -1,21 +1,12 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using Helpers;
 using Nuke.Common;
-using Nuke.Common.CI;
-using Nuke.Common.Execution;
 using Nuke.Common.IO;
-using Nuke.Common.ProjectModel;
-using Nuke.Common.Tooling;
-using Nuke.Common.Utilities.Collections;
 using Phosphor;
 using Serilog;
-using static Nuke.Common.EnvironmentInfo;
-using static Nuke.Common.IO.FileSystemTasks;
-using static Nuke.Common.IO.PathConstruction;
 
 class Build : NukeBuild
 {
@@ -80,7 +71,7 @@ class Build : NukeBuild
             var iconsFile = OutputDirectory / "Icons.cs";
             iconsFile.WriteAllText(code);
 
-            Log.Information("Icons.cs file has been generated.");
+            Log.Information("Icons.cs file has been generated");
         });
     
     private List<IconName> GetIconNames(string style)
@@ -99,70 +90,5 @@ class Build : NukeBuild
             .ToList();
         
         return iconNames;
-    }
-}
-
-public record IconName(string Name)
-{
-    public string PropertyName => GetIconPropertyNames();
-    public string CssClasses => GetCssClasses();
-
-    private static readonly HashSet<string> weights = new(StringComparer.OrdinalIgnoreCase)
-    {
-        "thin", "light", "regular", "bold", "fill", "duotone"
-    };
-
-    private string GetWeight()
-    {
-        var parts = Name.Split('-');
-
-        return weights.Contains(parts[^1])
-            ? parts[^1].ToLowerInvariant()
-            : "regular";
-    }
-
-    private string GetBaseName()
-    {
-        var parts = Name.Split('-');
-
-        return weights.Contains(parts[^1])
-            ? string.Join("-", parts.Take(parts.Length - 1))
-            : Name;
-    }
-
-    private string GetCssClasses()
-    {
-        var weight = GetWeight();
-        var baseName = GetBaseName().ToLowerInvariant();
-
-        var sb = new StringBuilder();
-
-        if (weight == "regular")
-        {
-            sb.Append("ph");
-        }
-        else
-        {
-            sb.Append($"ph-{weight}");
-        }
-
-        sb.Append($" ph-{baseName}");
-
-        return sb.ToString();
-    }
-
-    private string GetIconPropertyNames()
-    {
-        var baseName = GetBaseName();
-        return ConvertKebabToPascal(baseName);
-    }
-
-    private string ConvertKebabToPascal(string kebabCase)
-    {
-        var words = kebabCase
-            .Split('-')
-            .Select(word => char.ToUpperInvariant(word[0]) + word[1..]);
-
-        return string.Concat(words);
     }
 }
