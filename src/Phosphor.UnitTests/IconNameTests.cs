@@ -2,56 +2,39 @@ namespace Phosphor.UnitTests;
 
 public class IconNameTests
 {
-    [SetUp]
-    public void Setup()
-    {
-    }
-
-    [Test]
+    [Fact]
     public void Test_with_thumbs_up_thin()
     {
         var iconName = new IconName("thumbs-up-thin");
 
-        Assert.Multiple(() =>
-        {
-            Assert.That(iconName.PropertyName, Is.EqualTo("ThumbsUp"));
-            Assert.That(iconName.CssClasses, Is.EqualTo("ph-thin ph-thumbs-up"));
-        });
+        Assert.Equal("ThumbsUp", iconName.PropertyName);
+        Assert.Equal("ph-thin ph-thumbs-up", iconName.CssClasses);
     }
 
-    [Test]
+    [Fact]
     public void Test_with_thumbs_up()
     {
         var iconName = new IconName("thumbs-up");
 
-        Assert.Multiple(() =>
-        {
-            Assert.That(iconName.PropertyName, Is.EqualTo("ThumbsUp"));
-            Assert.That(iconName.CssClasses, Is.EqualTo("ph ph-thumbs-up"));
-        });
+        Assert.Equal("ThumbsUp", iconName.PropertyName);
+        Assert.Equal("ph ph-thumbs-up", iconName.CssClasses);
     }
 
-    [Test]
+    [Fact]
     public void Test_with_thumbs_up_bold()
     {
         var iconName = new IconName("thumbs-up-bold");
 
-        Assert.Multiple(() =>
-        {
-            Assert.That(iconName.PropertyName, Is.EqualTo("ThumbsUp"));
-            Assert.That(iconName.CssClasses, Is.EqualTo("ph-bold ph-thumbs-up"));
-        });
+        Assert.Equal("ThumbsUp", iconName.PropertyName);
+        Assert.Equal("ph-bold ph-thumbs-up", iconName.CssClasses);
     }
 
-    [Test]
+    [Fact]
     public void Test_with_thumbs_up_duotone()
     {
         var iconName = new IconName("thumbs-up-duotone");
-        
-        Assert.Multiple(() =>
-        {
-            Assert.That(iconName.PropertyName, Is.EqualTo("ThumbsUp"));
-            Assert.That(iconName.CssClasses, Is.EqualTo("ph-duotone ph-thumbs-up"));
-        });
+
+        Assert.Equal("ThumbsUp", iconName.PropertyName);
+        Assert.Equal("ph-duotone ph-thumbs-up", iconName.CssClasses);
     }
 }
