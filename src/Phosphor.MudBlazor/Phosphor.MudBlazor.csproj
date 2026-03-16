@@ -34,9 +34,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="10.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="10.0.5" />
     <PackageReference Include="MudBlazor" Version="9.1.0" />
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.103" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.201" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup>
