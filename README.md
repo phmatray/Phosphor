@@ -2,6 +2,20 @@
 
 # Phosphor.MudBlazor
 
+<!-- portfolio-badges:start -->
+<!-- Identity -->
+[![phmatray - Phosphor](https://img.shields.io/static/v1?label=phmatray&message=Phosphor&color=blue&logo=github)](https://github.com/phmatray/Phosphor)
+![Top language](https://img.shields.io/github/languages/top/phmatray/Phosphor)
+[![Stars](https://img.shields.io/github/stars/phmatray/Phosphor?style=social)](https://github.com/phmatray/Phosphor/stargazers)
+[![Forks](https://img.shields.io/github/forks/phmatray/Phosphor?style=social)](https://github.com/phmatray/Phosphor/network/members)
+
+<!-- Activity -->
+[![Issues](https://img.shields.io/github/issues/phmatray/Phosphor)](https://github.com/phmatray/Phosphor/issues)
+[![Pull requests](https://img.shields.io/github/issues-pr/phmatray/Phosphor)](https://github.com/phmatray/Phosphor/pulls)
+[![Last commit](https://img.shields.io/github/last-commit/phmatray/Phosphor)](https://github.com/phmatray/Phosphor/commits)
+<!-- portfolio-badges:end -->
+
+
 A flexible, beautiful icon family for MudBlazor applications. This library provides seamless integration of [Phosphor Icons](https://phosphoricons.com/) with [MudBlazor](https://mudblazor.com/) components.
 
 ## Features
