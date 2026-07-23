@@ -1,3 +1,5 @@
+![Phosphor banner](.github/banner.png)
+
 # Phosphor.MudBlazor
 
 A flexible, beautiful icon family for MudBlazor applications. This library provides seamless integration of [Phosphor Icons](https://phosphoricons.com/) with [MudBlazor](https://mudblazor.com/) components.
