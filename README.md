@@ -273,6 +273,19 @@ namespace Phosphor.Components
 }
 ```
 
+<!-- portfolio-techstack:start -->
+
+## Tech Stack
+
+- **.NET 10**
+- Nuke.Common
+- Microsoft.AspNetCore.Components.Web
+- MudBlazor
+- xunit.v3
+- xunit.runner.visualstudio
+
+<!-- portfolio-techstack:end -->
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
