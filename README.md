@@ -8,6 +8,7 @@
 ![Top language](https://img.shields.io/github/languages/top/phmatray/Phosphor)
 [![Stars](https://img.shields.io/github/stars/phmatray/Phosphor?style=social)](https://github.com/phmatray/Phosphor/stargazers)
 [![Forks](https://img.shields.io/github/forks/phmatray/Phosphor?style=social)](https://github.com/phmatray/Phosphor/network/members)
+[![License](https://img.shields.io/github/license/phmatray/Phosphor)](https://github.com/phmatray/Phosphor/blob/HEAD/LICENSE)
 
 <!-- Activity -->
 [![Issues](https://img.shields.io/github/issues/phmatray/Phosphor)](https://github.com/phmatray/Phosphor/issues)
