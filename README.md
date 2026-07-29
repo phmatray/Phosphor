@@ -343,3 +343,10 @@ Please check the LICENSE file for details.
 
 - [Phosphor Icons](https://phosphoricons.com/) for the beautiful icon set
 - [MudBlazor](https://mudblazor.com/) for the excellent Blazor component library
+
+<!-- portfolio-nugetkeep:start -->
+---
+Built by [Atypical Consulting](https://www.atypical.consulting). We also make
+[NuGetKeep](https://nugetkeep.com/?utm_source=github-readme&utm_medium=readme&utm_campaign=launch-2026-07),
+a self-hosted NuGet server with supply-chain quarantine.
+<!-- portfolio-nugetkeep:end -->
